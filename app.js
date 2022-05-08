@@ -18,5 +18,5 @@ app.use(morgan("dev"));
 //for authentication use this route
 app.use("/api/v1/auth", authRouter);
 //for users use this route
-app.use("/api/v1/users", authRouter);
+app.use("/api/v1/users", userRouter);
 module.exports = app;

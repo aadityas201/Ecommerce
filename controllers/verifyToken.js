@@ -1,5 +1,6 @@
 const jwt = require("jsonwebtoken");
 
+//Our Middleware Functions to check and authorise user
 //to verify if the token is valid or not
 const verifyToken = (req, res, next) => {
   //token is sent via Header
