@@ -7,6 +7,7 @@ const userRouter = require("./routes/userRouter");
 const productRouter = require("./routes/productRouter");
 const orderRouter = require("./routes/orderRouter");
 const cartRouter = require("./routes/cartRouter");
+const stripeRouter = require("./routes/stripeRouter");
 //middleware for parsing the JSON requests into req.body
 //without this req.body is undefined
 app.use(express.json());
@@ -28,4 +29,6 @@ app.use("./api/v1/products", productRouter);
 app.use("./api/v1/orders", orderRouter);
 //use this route for carts
 app.use("./api/v1/carts", cartRouter);
+app.use("./api/v1/payment", stripeRouter);
+
 module.exports = app;
