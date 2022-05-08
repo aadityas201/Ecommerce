@@ -4,6 +4,8 @@ const morgan = require("morgan");
 const app = express();
 const authRouter = require("./routes/authRouter");
 const userRouter = require("./routes/userRouter");
+const productRouter = require("./routes/productRouter");
+const orderRouter = require("./routes/orderRouter");
 //middleware for parsing the JSON requests into req.body
 //without this req.body is undefined
 app.use(express.json());
@@ -19,4 +21,8 @@ app.use(morgan("dev"));
 app.use("/api/v1/auth", authRouter);
 //for users use this route
 app.use("/api/v1/users", userRouter);
+//for producys use this Route
+app.use("./api/v1/products", productRouter);
+//use this route for order
+app.use("./api/v1/orders", orderRouter);
 module.exports = app;
